@@ -15,7 +15,7 @@ def total_salary(path):
                     print('Incorrect string found')
                     continue
     except FileNotFoundError:
-        print("Файл не знайдено")
+        print("File not found")
         return 0, 0
 
     if count == 0:
