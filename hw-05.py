@@ -16,6 +16,7 @@ def caching_fibonacci():
         return cache[n]
     return fibonacci
 
+caching_fibonacci()
 '''
 Завдання 2
 '''
@@ -26,7 +27,7 @@ def generator_numbers(text: str):
     Iterates over the string `text`, finds all numbers
     and returns them one by one as `float`.
     '''
-    for numbers in re.findall(r'[-+]?\d*\.\d+|\d+', text):
+    for numbers in re.findall(r'\s[-+]?\d*\.\d+|\d+\s ', text):
         yield float(numbers)
 
 def sum_profit(text: str, func: callable):
@@ -40,6 +41,8 @@ def sum_profit(text: str, func: callable):
 
 text = "Загальний дохід працівника складається з декількох частин: 1000.01 як основний дохід, доповнений додатковими надходженнями 27.45 і 324.00 доларів."
 total_income = sum_profit(text, generator_numbers)
+
+print(total_income)
 
 '''
 Завдання 3 у bot.py
